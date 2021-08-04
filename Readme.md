@@ -42,5 +42,5 @@ sudo certbot --nginx -d yourdomain.com -d www.yourdomain.com
 **Only valid for 90 days, test the renewal process with command**
 certbot renew --dry-run
 ---
-## Congratulations, You have Configured your Domain and now you can visit your domain
-## If you have any issue or questions you can reach me out
+### Congratulations, You have Configured your Domain and now you can visit your domain
+### If you have any issue or questions you can reach me out
