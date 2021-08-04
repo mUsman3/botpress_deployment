@@ -7,16 +7,16 @@
 #### Step 4: Go to the browser and verify that either you can see admin page on "your_ip:3000"
 ###Note: Make sure you have allowd traffice by opening port 3000
 #### Step 5: Now Its time to install NGINX
-**sudo apt-get update**
-**sudo apt-get install nginx**
+#### sudo apt-get update
+#### sudo apt-get install nginx
 #### Step 6: Now Start NGINX as A Service
 **sudo systemctl start nginx**
 #### Step 7: Allow Ports from your systems
 **sudo ufw allow http (Port 80)**
 **sudo ufw allow https (Port 443)**
 #### Step 8: Configure nginx 
-**sudo nano /etc/nginx/sites-available/default**
-**Add the following to the location part of the server block**
+#### sudo nano /etc/nginx/sites-available/default
+#### Add the following to the location part of the server block
     
     server_name yourdomain.com www.yourdomain.com;
     location / {
@@ -28,14 +28,14 @@
         proxy_cache_bypass $http_upgrade;
     }
 #### Step 9: Verify that either configs are successful and restart nginx 
-**sudo nginx -t**
-**sudo systemctl restart nginx**
+#### sudo nginx -t
+#### sudo systemctl restart nginx
 #### Step 10: Register you domain from any Domain Registrar and configure with your hosting/server
 #### Step 11: Add SSL with letsencrypt 
-sudo add-apt-repository ppa:certbot/certbot
-sudo apt-get update
-sudo apt-get install python-certbot-nginx
-sudo certbot --nginx -d yourdomain.com -d www.yourdomain.com
+#### sudo add-apt-repository ppa:certbot/certbot
+#### sudo apt-get update
+#### sudo apt-get install python-certbot-nginx
+#### sudo certbot --nginx -d yourdomain.com -d www.yourdomain.com
 
 **Note** Here you will be asked for email and after you have to choose 1 or 2, you need to choose 2 so that it will auto redirect your traffic from http to https
 
