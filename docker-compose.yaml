@@ -26,8 +26,10 @@ services:
     image: botpress-lang
     container_name: botpress-lang
     command: ./bp lang --langDir /botpress/lang --port 3100
-    expose:
-      - 3100
+#    expose:
+#      - 3100
+    ports:
+      - 3100:3100
     volumes:
       - ./botpress/language:/botpress/lang
 
